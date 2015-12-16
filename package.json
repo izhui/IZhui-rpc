@@ -1,0 +1,22 @@
+{
+  "name": "izhui-rpc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izhui/IZhui-rpc.git"
+  },
+  "keywords": [
+    "izhui"
+  ],
+  "author": "cava.zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/izhui/IZhui-rpc/issues"
+  },
+  "homepage": "https://github.com/izhui/IZhui-rpc#readme"
+}
