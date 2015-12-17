@@ -11,19 +11,22 @@ var server = Rpc("myserverid","测试DEMO",{
 .on("connect",function(){
     // this.disConnectCluster();
 })
+.on("giveme5",function( req, callback){
+    callback( 201, null, "对不起。这是真的");
+})
 .on("demo",function( req, callback ){
     // callback( 200, null, req);
     callback( 200,null,"对不起，我错了");
 }).listen(8881)
 .connectCluster( key,6660 );
 
-// setInterval(function(){
-    // server.invoke("myserverid2","demo",{ a: 'a', b: 'b', c: 'c' },function(status,err,result){
-      // // console.log(error.message,msg);
-      // console.log(status,err,result);
-    // });
-    // server.invoke("myserverid2","hello",{ a: 'a', b: 'b', c: 'c' },function(status,err,result){
-      // // console.log(error.message,msg);
-      // console.log(status,err,result);
-    // });
-// },1000);
+setInterval(function(){
+    server.invoke("myserverid2","demo",{ a: 'a', b: 'b', c: 'c' },function(status,err,result){
+      // console.log(error.message,msg);
+      console.log(status,err,result);
+    });
+    server.invoke("myserverid2","hello",{ a: 'a', b: 'b', c: 'c' },function(status,err,result){
+      // console.log(error.message,msg);
+      console.log(status,err,result);
+    });
+},1000);
