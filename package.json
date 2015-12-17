@@ -1,6 +1,6 @@
 {
   "name": "izhui-rpc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -22,5 +22,12 @@
     "example": "example",
     "test": "test"
   },
-  "description": ""
+  "description": "npm install izhui-rpc",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "mkdirp": "^0.5.1",
+    "osr-class": "^0.1.8",
+    "osr-utils": "0.0.3",
+    "thrift": "^0.9.3"
+  }
 }
