@@ -3,20 +3,15 @@ var crypto = require("crypto");
 var client = Rpc.createClient({key:crypto.createHash("md5").update("c@v@cn.c0m","utf8").digest("hex").substr(8,16)});
 client.on("connect",function( rpc ){
     // console.log("connect");
-    this.process({ method: "demo", request: { name: "cavacn"}},function( status, err, result){
-        console.log(status,err,result);
-    });
-    this.process({ method: "wwwww", request: { name: "cavacn"}},function( status, err, result){
-        console.log(status,err,result);
-    });
+    setInterval(function(){
+        client.invoke("myserverid","demo",{request: { name: "cavacn"}},function( status, err, result){
+            console.log("===<",status,err,result);
+        });
+    },1000);
     
-    console.log(rpc);
 })
-.on("error",function(){
-    client.reconnect();
+.on("error",function(err){
+    console.log(err);
 })
-.connect( 8880, 'localhost');
+.connect( 6660, 'localhost');
 
-setInterval(function(){
-    // console.log("....");
-},1000);
