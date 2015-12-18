@@ -21,12 +21,24 @@ var server = Rpc("myserverid","测试DEMO",{
 .connectCluster( key,6660 );
 
 setInterval(function(){
-    server.invoke("myserverid2","demo",{ a: 'a', b: 'b', c: 'c' },function(status,err,result){
+    server.invoke("myserverid2","demo",{ a: 'a', b: 'b', c: 'c' },function(err,result){
       // console.log(error.message,msg);
-      console.log(status,err,result);
+      if(err){
+          console.log(err.stack);
+          console.log(err.message);
+          console.log(err.status);
+      }else{
+          console.log(result);
+      }
     });
-    server.invoke("myserverid2","hello",{ a: 'a', b: 'b', c: 'c' },function(status,err,result){
+    server.invoke("myserverid2","hello",{ a: 'a', b: 'b', c: 'c' },function(err,result){
       // console.log(error.message,msg);
-      console.log(status,err,result);
+      if(err){
+          console.log(err.stack);
+          console.log(err.message);
+          console.log(err.status);
+      }else{
+          console.log(result);
+      }
     });
 },1000);
