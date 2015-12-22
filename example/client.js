@@ -1,17 +1,21 @@
-var Rpc = require("../");
-var crypto = require("crypto");
-var client = Rpc.createClient({key:crypto.createHash("md5").update("c@v@cn.c0m","utf8").digest("hex").substr(8,16)});
-client.on("connect",function( rpc ){
-    // console.log("connect");
-    setInterval(function(){
-        client.invoke("myserverid","demo",{request: { name: "cavacn"}},function( status, err, result){
-            console.log("===<",status,err,result);
-        });
-    },1000);
-    
-})
-.on("error",function(err){
-    console.log(err);
-})
-.connect( 6660, 'localhost');
+'use strict';
 
+let Rpc = require("../");
+
+let client = Rpc.createClient( 'Cavacn.com@Client', 'Client客户端');
+
+client.on('error',function(err){
+    console.log('error',err);
+}).on('connect',function(){
+    // client.invoke('/demo/aaa',{ uname: 'cavacn', upass: 'cavacnpwd', age: 'hello'}  , console.log);
+    client.workerList(function( err, result ){
+        // console.log(result);
+        var data = result.result;
+        data.forEach(function(item,index){
+            client.readme(item.id,function(err,readme){
+                console.log(readme.result);
+            });
+        });
+    });
+})
+.connect( 8888 );
