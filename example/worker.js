@@ -1,12 +1,12 @@
 'use strict';
 const Rpc = require("../");
 
-let worker = Rpc.createWorker( 'demo', '测试案例','用于测试的第一个案例' );
+let worker = Rpc.createWorker( '/demo/0.2', '测试案例','用于测试的第一个案例' );
 
 worker.on('/:name',function( request, callback ){
     // console.log(request,callback);
     // console.log("======>")
-    callback( 200, null, request);
+    callback( 200, null, request );
 },{
     name:       '获取用户信息',
     detail:     '得到用户详情,非详细',

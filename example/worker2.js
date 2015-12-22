@@ -11,10 +11,9 @@ worker.on('/:name',function( request, callback){
 })
 .on('connect',function(){
     // console.log('connect');
-    let self = this;
-    //setInterval(function(){
-        self.remoteInvoke('/demo/hello',{ uname: Date.now(), upass: Date.now(), age: '12' },console.log);
-    //},1000);
+    setInterval(function(){
+        worker.remoteInvoke('/demo/0.2/hello',{ uname: Date.now(), upass: Date.now(), age: '12' },console.log);
+    },1000);
 })
 .listen( 5002 )
 .connect( 8888 ); 
