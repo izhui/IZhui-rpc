@@ -9,7 +9,6 @@ client.on('error',function(err){
 }).on('connect',function(){
     client.ask('/demo/0.2/aaa',function(err,client){
         console.log( client ? client.serviceId : '连接失败');
-        console.log('....')
     });
     // client.invoke('/demo/0.2/aaa',{ uname: 'cavacn', upass: 'cavacnpwd', age: '12'}  , console.log);
     // client.workerList(function( status, error, result ){
