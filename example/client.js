@@ -19,8 +19,8 @@ client.on('error',function(err){
             // });
         // });
     // });
-    //setInterval(function(){
-    //    client.invoke('/demo/0.2/aaa',{ uname: 'cavacn', upass: 'cavacnpwd', age: '12'},console.log);
-    //},1000);
+    setInterval(function(){
+        client.invoke('/demo/0.2/aaa',{ uname: 'cavacn', upass: 'cavacnpwd', age: '12'},console.log);
+    },1000);
 })
 .connect( 8888 );
