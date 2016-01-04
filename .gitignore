@@ -2,3 +2,5 @@
 .idea/*
 
 .idea/encodings.xml
+
+npm-debug.log
