@@ -1,6 +1,6 @@
 {
   "name": "izhui-rpc",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/izhui/IZhui-rpc#readme",
   "directories": {
+    "doc": "doc",
     "example": "example",
     "test": "test"
   },
